@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Assignment4</title>
+  
+</head>
+
+<body>
+    <h1>Stock Manager</h1>
+    <div class="container-fluid">
+        <div class="form-row">
+                <div class="col-md-4">
+                    <form >
+                    <!--<div style="padding: 8px" class="form-group">
+                        <input type="number" class="form-control" id="ID" aria-describedby="codeHelp"> -->
+                    <p style="padding: 10px" id="p1">0</p>
+
+                    <div style="padding: 8px" class="form-group">
+                        <input type="number"  id="code" placeholder="Code" style="width: 100%">
+                    </div>
+                    <div style="padding: 8px" class="form-group">
+                        <input type="number"  id="quantity" placeholder="Quantity" style="width: 100%">
+                    </div>
+                    <div style="padding: 8px" class="form-group">
+                        <input type="number" id="unitprice" placeholder="Unit Price" style="width: 100%">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="update()">Add Item</button>
+                    <button type="button" class="btn btn-primary" onclick="Edit()">Edit</button>
+                    <button type="button" class="btn btn-primary" onclick="Total()">Total</button>
+                    <h2 id="ttl"></h2>
+                </forms>
+                </div>
+            <div class="col-md-6">
+                <div style="padding-top: 20px; margin-left: 20%; width: 100%" class="col-md-9 col-sm-9 col-9">
+                    <table border="1" style="border: 1px solid black; width: 100%" id="t1">
+                        <tr>
+                            <th>ID</th>
+                            <th>Code</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Place Order
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel">Delivery Adress</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2>Delivery Adress</h2>
+                    <input type="text" placeholder="Line 1" style="width: 100%"><br>
+                    <input type="text" placeholder="Line 2" style="width: 100%"><br>
+                    <input type="text" placeholder="Line 3" style="width: 100%"><br>
+                    <h2>Mobile #</h2>
+                    <input type="number" placeholder="Phone" style="width: 100%"><br>
+                    <h2>Zip Code</h2>
+                    <input type="number" placeholder="Zip" style="width: 100%"><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save & Proceed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        View Invoice
+    </button>
+    
+    <script>
+            var x = 1;
+            var sum = 0;
+            function update() {
+                document.getElementById("p1").innerHTML = x;
+    
+                var code = document.getElementById("code").value;
+                var quantity = document.getElementById("quantity").value;
+                var unitprice = document.getElementById("unitprice").value;
+    
+                var table = document.getElementById("t1");
+                var newRow = table.insertRow(table.rows.length);
+    
+                var cel1 = newRow.insertCell(0);
+                var cel2 = newRow.insertCell(1);
+                var cel3 = newRow.insertCell(2);
+                var cel4 = newRow.insertCell(3);
+    
+                sum += parseInt(unitprice * quantity);
+    
+                cel1.innerHTML = x;
+                cel2.innerHTML = code;
+                cel3.innerHTML = quantity;
+                cel4.innerHTML = unitprice;
+                x++;
+            }
+            function Total() {
+                document.getElementById("ttl").innerHTML = "Total: " + sum;
+            }
+        </script>
+        
+        <!--var table = document.getElementById("t1"), rIndex;
+          for (i = 1; i < table.rows.length; i++) {
+              tables.row[i].onclick = function Edit() {
+                  rIndex = this.rowIndex;
+                  console.log(rIndex);
+
+                  document.getElementById("code") = this.cells[1].innerHTML;
+                  document.getElementById("quantity") = this.cells[2].innerHTML;
+                  document.getElementById("unitprice") = this.cells[3].innerHTML;
+              }
+          }
+          function Edit() {
+              table.row[rIndex].cells[0].innerHTML = document.getElementById("p1").value;
+              table.row[rIndex].cells[1].innerHTML = document.getElementById("code").value;
+              table.row[rIndex].cells[2].innerHTML = document.getElementById("quantity").value;
+              table.row[rIndex].cells[3].innerHTML = document.getElementById("unitprice").value;
+          }</table.rows.length>-->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
