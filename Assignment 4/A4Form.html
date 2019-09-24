@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assignment4</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container" style="background-color:aquamarine">
+        <h1 style="text-align: center">Survey Form</h1>
+        <div class="col-md-8 offset-2" style="background-color: white; text-align: center">
+            <form class="form-horizontal" style="text-align: center"><br>
+                <p>Let us know how we can improve free Code Camp</p>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" style="text-align: right">*Name:</label>
+                    <div class="col-sm-3">
+                        <input type="name" class="form-control" id="n1" placeholder="Enter name" style="width: 100%">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5  col-form-label" style="text-align: right">*Email:</label>
+                    <div class="col-sm-3">
+                        <input type="email" class="form-control" id="e1" placeholder="Enter Your Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" style="text-align: right">*Age:</label>
+                    <div class="col-sm-3">
+                        <input type="number" class="form-control" id="a1" placeholder="Enter Your Age ">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" style="text-align: right">Which option best describe your
+                        current role ?</label>
+                    <div class="col-sm-3">
+                        <select id="cr1" class="form-control form-control-sm">
+                            <option>Student</option>
+                            <option>Employee</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" style="text-align: right">How likely is that you would
+                        recommend free Code Camp to a friend ?</label><br>
+                    <div name="a1" class="col-sm-3" style="text-align: left;margin-top: 10px">
+                        <input type="radio" name="option">Definitely<br>
+                        <input type="radio" name="option">May Be <br>
+                        <input type="radio" name="option">Not Sure <br>
+                    </div>
+                </div>
+                <br>
+
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" style="text-align: right">What do you like most in FCC:
+                    </label>
+                    <div id="b1" class="col-sm-3">
+                        <select class="form-control form-control-sm">
+                            <option>Select an option</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+
+                <div class="form-group row">
+                    <label class="col-sm-5 col-form-label" style="text-align: right">Things that should be improved in
+                        the future (Check that all apply):</label>
+                    <div name="c1" class="col-sm-4" style="text-align: left;margin-top: 10px">
+                        <input type="checkbox" name="chcek">Front-End Projects<br>
+                        <input type="checkbox" name="chcek">Back-End Projects <br>
+                        <input type="checkbox" name="chcek">Data Visualization <br>
+                        <input type="checkbox" name="chcek">Challenges <br>
+                        <input type="checkbox" name="chcek">Open Source Community <br>
+                        <input type="checkbox" name="chcek">Gitter Help Rooms<br>
+                        <input type="checkbox" name="chcek">Videos <br>
+                        <input type="checkbox" name="chcek">City Meetups <br>
+                        <input type="checkbox" name="chcek">Wiki <br>
+                        <input type="checkbox" name="chcek">Forum <br>
+                        <input type="checkbox" name="chcek">Additional Courses <br>
+                    </div>
+                </div>
+                <br>
+
+                <div style="vertical-align: baseline;" class=" form-group row">
+                    <label class="col-sm-5 col-form-label" style="text-align: right">Any Comments or
+                        Suggestions?</label>
+                    <div id="d1" class="col-sm-3 "> <textarea class="form-control" placeholder="Comments..."
+                            rows="4"></textarea>
+                    </div>
+                </div>
+                <br>
+
+                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                    onclick="modal2()">
+                    View </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title" id="exampleModalLabel">Details </h1>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="row">
+                                        <label class="col-sm-5">Name:</label>
+                                        <div class="col-sm-3" id="name1"></div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">Email:</label>
+                                        <div class="col-sm-3" id="email1"></div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">Age:</label>
+                                        <div class="col-sm-3" id="age1"></div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">Current Role:</label>
+                                        <div class="col-sm-3" id="cr2"></div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">what would you recommend:</label>
+                                        <div class="col-sm-3" id="a2"></div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">Most things liked</label>
+                                        <div class="col-sm-3" id="b2"></div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">Things Improved:</label>
+                                        <div class="col-sm-3" id="c2"></div>
+                                    </div>
+                                    <div class="row">
+                                        <label class="col-sm-5">Comments:</label>
+                                        <div class="col-sm-3" id="d2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save & Proceed</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+        </div>
+        </form>
+    </div>
+    </div>
+    <script>
+        function modal2() {
+            var name = document.getElementById("n1").value;
+            document.getElementById("name1").innerHTML = name;
+            var email = document.getElementById("e1").value;
+            document.getElementById("email1").innerHTML = email;
+            var age = document.getElementById("a1").value;
+            document.getElementById("age1").innerHTML = age;
+
+            console.log("modal 2");
+            var ele = document.getElementsByName("chcek");
+            console.log(ele.length);
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked) {
+                    document.getElementById("a2").innerHTML = "" + ele[i].value;
+                    console.log(ele[i].value);
+                }
+            }
+            var names = document.getElementsByName("c1");
+            for (i = 0; i < names.length; i++) {
+                if (names[i].checked)
+                    document.getElementById("c2").innerHTML = "" + names[i].value;
+
+            }
+            document.getElementById("b2").innerHTML = document.getElementById("b1").value;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
